@@ -2,9 +2,7 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
- * This is a command line calculator written in
- *
- * <p>Java
+ * This is a command line calculator written in Java
  *
  * @author Christopher Di Bert
  * @version 1.0
@@ -92,9 +90,10 @@ public class MathOperators {
 
   // Function used to catch any mathematically impossible operations
   private static String ErrorCheck() {
-    if (num2 == 0 && userOperation == "/") {
+    // Checks for division by 0
+    if (num2.intValue() == 0 && userOperation.equals("/")) {
       return "You cannot divide by zero!";
-    } else if (num1 < 0) {
+    } else if (num1 < 0 && userOperation.equals("sqrt")) {
       return "You can't take the square root of a negative number!";
     }
     // If no errors were found, returns string saying no errors found
