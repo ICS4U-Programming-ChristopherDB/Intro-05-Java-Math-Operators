@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class MathOperators {
 
-  // Class-wide variables to be accessed by calculator methods
+  // Properties to be accessed by calculator methods
   private static int userDecimalPlaces = 0;
   private static Double num1 = 0.0, num2 = 0.0;
   private static String userOperation;
