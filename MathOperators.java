@@ -16,7 +16,7 @@ public class MathOperators {
   private static String userOperation;
   private static final String[] OPERATIONS = {"+", "-", "*", "/", "^", "sqrt"};
 
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     System.out.println("Hello! Welcome to the calculator!");
 
