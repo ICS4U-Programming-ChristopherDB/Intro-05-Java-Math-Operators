@@ -4,17 +4,25 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
- * This is a command line calculator written in Java
+ * Command line calculator built with Java.
  *
  * @author Christopher Di Bert
  * @version 1.0
- * @since 2024-2-12
+ * @since 14-2-2024
  */
-public class MathOperators {
+
+
+public final class MathOperators {
+
+  /** Private constructor to prevent instantiation. */
+  private MathOperators() {
+    throw new UnsupportedOperationException("Cannot instantiate");
+  }
 
   // Properties to be accessed by calculator methods
   private static int userDecimalPlaces = 0;
-  private static Double num1 = 0.0, num2 = 0.0;
+  private static Double num1 = 0.0d;
+  private static Double num2 = 0.0d;
   private static String userOperation;
   private static final String[] OPERATIONS = {"+", "-", "*", "/", "^", "sqrt"};
 
@@ -27,14 +35,15 @@ public class MathOperators {
      */
     final String errorMessage = GetUserValues();
     if (errorMessage.equals("No errors")) {
-      System.out.println("Answer: " + Arithmetic(num1, num2, userDecimalPlaces, userOperation));
+      System.out.println("Answer: " + Arithmetic
+      (num1, num2, userDecimalPlaces, userOperation));
     } else {
       System.out.println(errorMessage);
     }
   }
 
   // Used to check if user's operator actually exists
-  private static boolean IsValidOperation(String userOperation) {
+  private static boolean isValidOperation(String userOperation) {
     // Foreach loop iterates through all possible operations
     for (String operation : OPERATIONS) {
       if (userOperation.equals(operation)) {
@@ -62,7 +71,7 @@ public class MathOperators {
     System.out.print("Enter the operation you wish to perform\n");
     System.out.print("(+, -, *, /, ^, sqrt)\n>> ");
     userOperation = sc.nextLine();
-    if (IsValidOperation(userOperation) == false) {
+    if (isValidOperation(userOperation) == false) {
       return "You must enter a listed operator!";
     }
 
