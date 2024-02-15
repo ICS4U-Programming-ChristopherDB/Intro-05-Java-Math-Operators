@@ -19,22 +19,31 @@ public final class MathOperators {
 
     /** The number of decimal places that the user will specify. */
     private static int userDecimalPlaces = 0;
+    /** Declared to resolve magic number linter error */
+    private static int newlineCharacters = 20;
     /** Initializing input values that will be overridden. */
     private static Double num1 = 0.0d;
     /** Initializing input values that will be overridden. */
     private static Double num2 = 0.0d;
     /** Initializing input values that will be overridden. */
     private static String userOperation;
-    /** Array of operations that are available. Used to check for valid input. */
-    private static final String[] OPERATIONS = {"+", "-", "*", "/", "^", "sqrt"};
+    /** Array of operations that are available. */
+    private static final String[] OPERATIONS = 
+        { "+", "-", "*", "/", "^", "sqrt" };
 
+  /**
+   * This is the main method.
+   *
+   * @param args Unused
+   */
     public static void main(final String[] args) {
-        System.out.print("\n".repeat(20));
+        System.out.print("\n".repeat(newlineCharacters));
         System.out.println("Hello! Welcome to the calculator!");
 
         final String errorMessage = getUserValues();
         if ("No errors".equals(errorMessage)) {
-            System.out.println("Answer: " + arithmetic(num1, num2, userDecimalPlaces, userOperation));
+          System.out.println("Answer: " +
+            arithmetic(num1, num2, userDecimalPlaces, userOperation));
         } else {
             System.out.println(errorMessage);
         }
