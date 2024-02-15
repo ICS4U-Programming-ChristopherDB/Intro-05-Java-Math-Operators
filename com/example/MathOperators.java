@@ -21,7 +21,7 @@ public final class MathOperators {
   private static int userDecimalPlaces = 0;
 
   /** Declared to resolve magic number linter error. */
-  private static final int newLineCharacters = 20;
+  private static final int NEW_LINE_CHARACTERS = 20;
 
   /** Initializing input values that will be overridden. */
   private static Double num1 = 0.0d;
@@ -41,7 +41,7 @@ public final class MathOperators {
    * @param args Unused
    */
   public static void main(final String[] args) {
-    System.out.print("\n".repeat(newLineCharacters));
+    System.out.print("\n".repeat(NEW_LINE_CHARACTERS));
     System.out.println("Hello! Welcome to the calculator!");
 
     final String errorMessage = getUserValues();
@@ -109,8 +109,8 @@ public final class MathOperators {
   }
 
   private static String arithmetic() {
-    final String DecimalString = "0." + "0".repeat(userDecimalPlaces);
-    final DecimalFormat decimalFormatter = new DecimalFormat(DecimalString);
+    final String decimalString = "0." + "0".repeat(userDecimalPlaces);
+    final DecimalFormat decimalFormatter = new DecimalFormat(decimalString);
     final Double result;
     switch (userOperation) {
       case "+":
