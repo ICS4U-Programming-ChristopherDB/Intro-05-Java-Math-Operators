@@ -17,10 +17,15 @@ public final class MathOperators {
         throw new UnsupportedOperationException("Cannot instantiate");
     }
 
+    /** The number of decimal places that the user will specify. */
     private static int userDecimalPlaces = 0;
+    /** Initializing input values that will be overridden. */
     private static Double num1 = 0.0d;
+    /** Initializing input values that will be overridden. */
     private static Double num2 = 0.0d;
+    /** Initializing input values that will be overridden. */
     private static String userOperation;
+    /** Array of operations that are available. Used to check for valid input. */
     private static final String[] OPERATIONS = {"+", "-", "*", "/", "^", "sqrt"};
 
     public static void main(final String[] args) {
